@@ -3,7 +3,7 @@
 import os.path
 import pandas
 import re
-from libraries.ProjectPaths import make_data_path
+from ProjectPaths import make_data_path
 
 ##############################################
 ################# Kaomojis ###################
