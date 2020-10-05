@@ -1,16 +1,16 @@
 #-*- coding: utf-8 -*-
 
-import os.path
 import pandas
 import re
-from ProjectPaths import make_data_path
+import os.path
 
-##############################################
-################# Kaomojis ###################
-##############################################
+def printlocation():
+    __location__ = os.path.realpath(os.path.join(os.getcwd(), os.path.dirname(__file__)))
+    print(__location__)
 
 def getKaomojiDict():
-    data_path=make_data_path('Kaomoji.csv')
+    __location__ = os.path.realpath(os.path.join(os.getcwd(), os.path.dirname(__file__)))
+    data_path= module_path/'Kaomoji.csv'
     kao_df = pandas.read_csv(data_path)
     kao_df.index += 1
     k_dict = dict(zip(kao_df.index, kao_df.Kaomoji))
