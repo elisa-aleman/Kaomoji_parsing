@@ -4,13 +4,9 @@ import pandas
 import re
 import os.path
 
-def printlocation():
-    __location__ = os.path.realpath(os.path.join(os.getcwd(), os.path.dirname(__file__)))
-    print(__location__)
-
 def getKaomojiDict():
     __location__ = os.path.realpath(os.path.join(os.getcwd(), os.path.dirname(__file__)))
-    data_path= module_path/'Kaomoji.csv'
+    data_path= os.path.join(__location__,'Kaomoji.csv')
     kao_df = pandas.read_csv(data_path)
     kao_df.index += 1
     k_dict = dict(zip(kao_df.index, kao_df.Kaomoji))
